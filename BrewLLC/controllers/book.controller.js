@@ -47,7 +47,7 @@ exports.findOne = (req,res)=>{
 exports.update = (req,res)=>{
     Book.findByIdAndUpdate(req.params.bookId,{
         $set:{
-            email : req.body.email
+            title : req.body.title
         }
     })
     .then((data)=>{
@@ -60,7 +60,7 @@ exports.update = (req,res)=>{
 }
 
 exports.delete = (req,res)=>{
-    Student.findByIdAndRemove({_id: req.params.studentId})
+    Book.findByIdAndRemove({_id: req.params.bookId})
     .then(()=>{
         return res.status(204).send("Deleted Succesfully");
     }).catch((err)=>{

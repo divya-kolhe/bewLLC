@@ -16,8 +16,8 @@ app.get('/',(req,res)=>{
 
 // connect to dB
 mongoose.connect(process.env.DB_CONNECTION, {
+    useCreateIndex,
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true}
 ).then(()=>{
     console.log("Db Connected");
